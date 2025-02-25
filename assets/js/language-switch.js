@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             footer_products:"Products",
             footer_distributors:"Distributors",
             footer_contact:"Contact",
-            FLAG: "/assets/img/flagus.png"
+            FLAG: "assets/img/flagus.png"
         },
         es: {
             nav_home: `<i class="uil uil-house-user nav__icon"></i>Inicio`,
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
             footer_products:"Productos",
             footer_distributors:"Distribuidores",
             footer_contact:"Contacto", 
-            FLAG: "/assets/img/flagmx.png"
+            FLAG: "assets/img/flagmx.png"
      
         }
     };
