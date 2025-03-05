@@ -1,5 +1,6 @@
 // ===============ANIMATIONS=======================
 document.addEventListener("DOMContentLoaded", function () {
+  
     const elements = document.querySelectorAll('.animate-on-scroll');
       const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -117,5 +118,40 @@ function scrollUp(){
     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
     if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
-window.addEventListener('scroll', scrollUp)
+window.addEventListener('scroll', scrollUp);
 
+/*==================== Email logic ====================*/ 
+document.getElementById('contact_button').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    document.getElementById('contact_form').dispatchEvent(new Event('submit'));
+});
+
+document.getElementById('contact_form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('contact-form-name').value.trim();
+    const email = document.getElementById('contact-form-email').value.trim();
+    const subject = document.getElementById('contact-form-subject').value.trim();
+    const message = document.getElementById('contact-form-message').value.trim();
+
+    if (name === '' || email === '' || subject === '' || message === '') {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    const templateParams = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+    };
+
+
+    console.log('Form is valid. Proceed with the logic.');
+    emailjs.sendForm('service_dyh3aq6', 'template_rvpf5vk', document.getElementById('contact_form'))
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+});

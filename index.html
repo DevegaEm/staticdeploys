@@ -254,28 +254,28 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form grid">
+                    <form action="" class="contact__form grid" id="contact_form">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
                                 <label for="" class="contact__label language-change" id="contact_name">Name</label>
-                                <input type="text" class="contact__input" id="contact-form-name">
+                                <input type="text" class="contact__input" name="contact-name" id="contact-form-name">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__input" id="contact-form-email">
+                                <input type="email" class="contact__input" name="contact-email" id="contact-form-email">
                             </div>
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label language-change" id="contact_subject">Subject</label>
-                            <input type="text" class="contact__input" id="contact-form-name" id="contact-form-subject">
+                            <input type="text" class="contact__input" name="contact-subject" id="contact-form-subject">
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label language-change" id="contact_message">Message</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact__input" id="contact-form-message"></textarea>
+                            <textarea cols="0" rows="7" class="contact__input" name="contact-message" id="contact-form-message"></textarea>
                         </div>
 
                         <div>
-                            <a href="#" class="button button--flex language-change" id="contact_button">
+                            <a href="" class="button button--flex language-change" id="contact_button">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
                             </a>
@@ -328,13 +328,24 @@
             <i class="uil uil-arrow-up scrollup__icon"></i>
         </a>
 
+        <!--==================== EMAILJS ====================-->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init({
+                    publicKey: "GlXaiEP7Pa5dusIRc",
+                });
+            })();
+        </script>
         <!--==================== SWIPER JS ====================-->
         <script src="assets/js/swiper-bundle.min.js"></script>
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
 
-        <!--==================== MAIN JS ====================-->
+        <!--==================== LANGUAGE SWITCH JS ====================-->
         <script src="assets/js/language-switch.js"></script>
 
     </body>
