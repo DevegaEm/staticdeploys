@@ -151,7 +151,11 @@ document.getElementById('contact_form').addEventListener('submit', function(even
     emailjs.sendForm('service_dyh3aq6', 'template_rvpf5vk', document.getElementById('contact_form'))
                     .then(() => {
                         console.log('SUCCESS!');
+                        document.getElementById('contact_form').reset();
+                        alert('We received your contact information, we\'ll reach out soon!.');
                     }, (error) => {
                         console.log('FAILED...', error);
+                        alert('There\'s been an error, try again later.');
+
                     });
 });
